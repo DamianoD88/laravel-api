@@ -15,13 +15,21 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $posts = Post::all();
-        return response()->json([
-            'successo' => true,
-            'risultato' => '$posts'
+    {   
+        //post unica pag
+        // $posts = Post::all();
+        // return response()->json([
+        //     'successo' => true,
+        //     'risultato' => '$posts'
 
-        ]);
+        // ]);
+
+        $posts = Post::paginate(4);
+         return response()->json([
+             'successo' => true,
+             'risultato' => '$posts'
+
+         ]);
     }
 
 
