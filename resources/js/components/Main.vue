@@ -16,7 +16,12 @@
 
 <script>
 export default {
-    name: "Main"
+    name: "Main",
+    data(){
+        return {
+            chiamataApi: 'http://localhost:8000/api/posts'
+        }
+    }
 }
 </script>
 
